@@ -14,7 +14,7 @@ const Product = () => {
       <h1>this is product page</h1>
       {ProductData.map((product) => (
         <li key={product.id}>
-          <Link to={`/products/${product.id}`}>{product.title}</Link>
+          <Link to={`${product.id}`}>{product.title}</Link>
         </li>
       ))}
     </>
