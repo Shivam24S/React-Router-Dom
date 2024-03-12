@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classes from "./header.module.css";
 
 const Header = () => {
@@ -7,7 +7,18 @@ const Header = () => {
       <header className={classes.header}>
         <ul className={classes.list}>
           <li>
-            <Link to="/">Home</Link>
+            {/* <Link to="/">Home</Link> */}
+
+            {/* replacing link to NavLink givin by react-router-dom */}
+            <NavLink
+              to="/"
+              className={({ isActive }) => {
+                isActive ? classes.list : undefined;
+              }}
+              end
+            >
+              Home
+            </NavLink>
           </li>
           <li>
             <Link to="/products">Products</Link>
